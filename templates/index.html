@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mir 自动脚本控制面板</title>
+    <style>
+      body { font-family: Arial, sans-serif; padding: 20px }
+      button { margin: 6px }
+      #log { white-space: pre-wrap; border: 1px solid #ddd; padding: 8px; height: 200px; overflow: auto }
+    </style>
+  </head>
+  <body>
+    <h2>Mir 自动脚本控制面板</h2>
+    <div>
+      模拟器 Serial: <strong id="serial">{{ serial }}</strong>
+    </div>
+    <div style="margin-top:8px">
+      ADB 可执行文件路径: <input id="adbPath" style="width:400px" placeholder="例如：C:\\Program Files\\MuMu\\adb.exe" />
+      <button id="btnSaveConfig">保存</button>
+    </div>
+    <div style="margin-top: 12px;">
+      <button id="btnConnect">建立连接</button>
+      <button id="btnStart">启动脚本</button>
+      <button id="btnStop">停止脚本</button>
+      <button id="btnScreenshot">抓取屏幕</button>
+    </div>
+
+    <h3>日志</h3>
+    <div id="log">就绪...</div>
+
+    <h3>截图</h3>
+    <div>
+      <button id="btnScreenshotDownload" style="display:none">下载截图</button>
+      <div><img id="screenshotImg" alt="screenshot" style="max-width:100%; border:1px solid #ccc; margin-top:8px" /></div>
+    </div>
+
+    <script src="/static/main.js"></script>
+  </body>
+  </html>
